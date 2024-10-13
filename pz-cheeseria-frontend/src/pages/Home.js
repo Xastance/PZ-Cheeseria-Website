@@ -214,5 +214,14 @@ function Home() {
         </Container>
     );
 }
+// Additional Features I'd like to implement in the future:
+// Shopping Cart Feature: Allows users to add selected cheeses to their cart, view cart contents, and proceed to checkout.
+// Admin Page for Managing Cheeses: Create a secure admin interface where admins can add, update, or delete cheeses, manage categories, and control stock/pricing.
+// User Account and Login System: Implement user authentication so users can create accounts, log in, and manage orders or favourite cheeses.
+// Favourites or Wishlist Feature: Users could mark cheeses as favourites and access a wishlist for future purchases.
+// Order History and Tracking: Enable users to view their past purchases and track the status of current orders via their profile.
+// Payment Gateway Integration: Integrate a payment system to process orders securely.
+// Rating and Review System: Let users leave ratings and reviews for cheeses, with dynamic average ratings displayed on each cheese's page.
+// Improved Filtering Options: Add more advanced filtering, such as by price range, customer ratings, or specific product attributes like "organic" or "artisanal".
 
 export default Home;
