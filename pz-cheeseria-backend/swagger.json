@@ -1,0 +1,257 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "PZ Cheeseria API",
+        "description": "API documentation for managing cheese inventory with soft delete and image URLs.",
+        "version": "1.0.0"
+    },
+    "host": "localhost:3001",
+    "basePath": "/",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/cheeses": {
+            "get": {
+                "tags": [
+                    "Cheese"
+                ],
+                "summary": "Get all active cheeses",
+                "description": "Retrieve a list of all active cheeses (isActive = 1).",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of active cheeses",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Cheese"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Cheese"
+                ],
+                "summary": "Add a new cheese",
+                "description": "Add a new cheese to the inventory.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Cheese object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Cheese"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Cheese created successfully"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/cheeses/{id}": {
+            "get": {
+                "tags": [
+                    "Cheese"
+                ],
+                "summary": "Get a cheese by ID",
+                "description": "Retrieve a cheese by its ID.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "description": "Cheese ID",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The requested cheese",
+                        "schema": {
+                            "$ref": "#/definitions/Cheese"
+                        }
+                    },
+                    "404": {
+                        "description": "Cheese not found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Cheese"
+                ],
+                "summary": "Update a cheese",
+                "description": "Update an existing cheese's details by ID.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "description": "Cheese ID",
+                        "type": "integer"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Updated cheese object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Cheese"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Cheese updated successfully"
+                    },
+                    "404": {
+                        "description": "Cheese not found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Cheese"
+                ],
+                "summary": "Soft delete a cheese (set isActive = 0)",
+                "description": "Soft delete a cheese by ID by setting isActive to 0 instead of removing it from the database.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "description": "Cheese ID",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Cheese soft deleted (isActive set to 0)"
+                    },
+                    "404": {
+                        "description": "Cheese not found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Cheese": {
+            "type": "object",
+            "required": [
+                "made_from",
+                "country_of_origin",
+                "family",
+                "type",
+                "texture",
+                "color",
+                "flavour",
+                "aroma",
+                "is_vegetarian",
+                "price_per_kilo",
+                "description",
+                "image_url"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Cheese ID"
+                },
+                "made_from": {
+                    "type": "string",
+                    "description": "What the cheese is made from (e.g., cow's milk, goat's milk)"
+                },
+                "country_of_origin": {
+                    "type": "string",
+                    "description": "Country where the cheese originates"
+                },
+                "family": {
+                    "type": "string",
+                    "description": "Family of the cheese (e.g., blue cheese, fresh cheese)"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Type of cheese"
+                },
+                "texture": {
+                    "type": "string",
+                    "description": "Texture of the cheese (e.g., soft, hard)"
+                },
+                "color": {
+                    "type": "string",
+                    "description": "Color of the cheese"
+                },
+                "flavour": {
+                    "type": "string",
+                    "description": "Flavor of the cheese (e.g., mild, strong)"
+                },
+                "aroma": {
+                    "type": "string",
+                    "description": "Aroma of the cheese"
+                },
+                "is_vegetarian": {
+                    "type": "integer",
+                    "description": "Is the cheese vegetarian (0 = No, 1 = Yes)"
+                },
+                "price_per_kilo": {
+                    "type": "number",
+                    "description": "Price per kilogram of the cheese"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the cheese"
+                },
+                "image_url": {
+                    "type": "string",
+                    "description": "URL or file path to the cheese image"
+                },
+                "isActive": {
+                    "type": "integer",
+                    "description": "Is the cheese active (1 = active, 0 = soft-deleted)"
+                }
+            }
+        }
+    }
+}
