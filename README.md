@@ -99,45 +99,6 @@ The `docker-compose.yml` file is used to set up multi-stage Docker builds for bo
      npm start
  ```
 
-## Database Schema
-
-The database schema for the `cheeses` table includes the following fields:
-
-- `id`: Primary key
-- `made_from`: Type of milk or ingredient the cheese is made from
-- `country_of_origin`: Country where the cheese originated
-- `family`: The family or category of the cheese
-- `type`: Type of cheese (e.g., hard, soft, semi-soft)
-- `texture`: Cheese texture
-- `color`: Cheese colour
-- `flavour`: Cheese flavour profile
-- `aroma`: Cheese aroma description
-- `isVegetarian`: Indicates if the cheese is vegetarian (0/1)
-- `price_per_kg`: Price per kilogram
-- `description`: Brief description of the cheese
-- `image_url`: URL to an image of the cheese
-- `isActive`: Whether the cheese is currently being sold (0/1)
-
-## API Endpoints
-
-### Cheese CRUD Endpoints:
-
-- **GET /cheeses**: Get a list of all cheeses.
-- **GET /cheeses/:id**: Get a specific cheese by ID.
-- **POST /cheeses**: Add a new cheese.
-- **PUT /cheeses/:id**: Update a cheese by ID.
-- **DELETE /cheeses/:id**: Remove a cheese by ID.
-
-You can view the detailed API documentation via Swagger after running the backend at `/api-docs`.
-
-## Running the Project
-
-After setting up and starting the application using Docker or manually, you can access:
-
-- **Frontend**: `http://localhost:3000`
-- **Backend**: `http://localhost:5000`
-- **Swagger API Documentation**: `http://localhost:5000/api-docs`
-
 ## Docker Setup
 
 ### Build and Run Containers
@@ -176,6 +137,45 @@ docker-compose up --build
 ```
 
 This will rebuild the images and restart the containers.
+
+## Database Schema
+
+The database schema for the `cheeses` table includes the following fields:
+
+- `id`: Primary key
+- `made_from`: Type of milk or ingredient the cheese is made from
+- `country_of_origin`: Country where the cheese originated
+- `family`: The family or category of the cheese
+- `type`: Type of cheese (e.g., hard, soft, semi-soft)
+- `texture`: Cheese texture
+- `color`: Cheese colour
+- `flavour`: Cheese flavour profile
+- `aroma`: Cheese aroma description
+- `isVegetarian`: Indicates if the cheese is vegetarian (0/1)
+- `price_per_kg`: Price per kilogram
+- `description`: Brief description of the cheese
+- `image_url`: URL to an image of the cheese
+- `isActive`: Whether the cheese is currently being sold (0/1)
+
+## API Endpoints
+
+### Cheese CRUD Endpoints:
+
+- **GET /cheeses**: Get a list of all cheeses.
+- **GET /cheeses/:id**: Get a specific cheese by ID.
+- **POST /cheeses**: Add a new cheese.
+- **PUT /cheeses/:id**: Update a cheese by ID.
+- **DELETE /cheeses/:id**: Remove a cheese by ID.
+
+You can view the detailed API documentation via Swagger after running the backend at `/api-docs`.
+
+## Running the Project
+
+After setting up and starting the application using Docker or manually, you can access:
+
+- **Frontend**: `http://localhost:3000`
+- **Backend**: `http://localhost:5000`
+- **Swagger API Documentation**: `http://localhost:5000/api-docs`
 
 ## License
 
