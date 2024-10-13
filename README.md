@@ -17,7 +17,7 @@ This project is a small proof-of-concept (POC) for a cheeseria front end using R
 
 The project consists of two main parts:
 - **Backend (`pz-cheeseria-backend`)**: This contains the Node.js backend with Express.js, SQLite for the database, and Swagger for API documentation.
-- **Frontend (`pz-cheeseria-frontend`)**: This contains the React-based frontend for displaying the cheese catalog and interacting with the backend API.
+- **Frontend (`pz-cheeseria-frontend`)**: This contains the React-based frontend for displaying the cheese catalogue and interacting with the backend API.
 
 The `docker-compose.yml` file is used to set up multi-stage Docker builds for both the front and backend components.
 
@@ -41,8 +41,7 @@ The `docker-compose.yml` file is used to set up multi-stage Docker builds for bo
 - Express.js
 - SQLite
 - Swagger for API documentation
-- Docker for containerization
-- Knex.js for database migrations and query building
+- Docker for containerisation
 
 ### Frontend:
 - React.js
@@ -58,52 +57,47 @@ The `docker-compose.yml` file is used to set up multi-stage Docker builds for bo
 
 ### Steps:
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/pz-cheeseria.git
-   ```
+ ```bash
+   git clone https://github.com/your-username/pz-cheeseria.git
+ ```
 2. Navigate to the project folder:
-   ```bash
-   cd pz-cheeseria
-   ```
+ ```bash
+   cd pz-cheeseria
+ ```
 
 3. Build and start the application using Docker Compose:
-   ```bash
-   docker-compose up --build
-   ```
+ ```bash
+   docker-compose up --build
+ ```
 
 4. Alternatively, to run manually:
-   #### Backend:
-   - Navigate to the backend directory:
-     ```bash
-     cd pz-cheeseria-backend
-     ```
-   - Install dependencies:
-     ```bash
-     npm install
-     ```
-   - Run migrations and seed the database:
-     ```bash
-     npx knex migrate:latest
-     npx knex seed:run
-     ```
-   - Start the backend server:
-     ```bash
-     npm start
-     ```
+   #### Backend:
+   - Navigate to the backend directory:
+ ```bash
+     cd pz-cheeseria-backend
+ ```
+   - Install dependencies:
+ ```bash
+     npm install
+ ```
+   - Start the backend server:
+ ```bash
+     npm start
+ ```
 
-   #### Frontend:
-   - Navigate to the frontend directory:
-     ```bash
-     cd pz-cheeseria-frontend
-     ```
-   - Install dependencies:
-     ```bash
-     npm install
-     ```
-   - Start the frontend server:
-     ```bash
-     npm start
-     ```
+   #### Frontend:
+   - Navigate to the frontend directory:
+ ```bash
+     cd pz-cheeseria-frontend
+ ```
+   - Install dependencies:
+ ```bash
+     npm install
+ ```
+   - Start the frontend server:
+ ```bash
+     npm start
+ ```
 
 ## Database Schema
 
@@ -115,8 +109,8 @@ The database schema for the `cheeses` table includes the following fields:
 - `family`: The family or category of the cheese
 - `type`: Type of cheese (e.g., hard, soft, semi-soft)
 - `texture`: Cheese texture
-- `color`: Cheese color
-- `flavour`: Cheese flavor profile
+- `color`: Cheese colour
+- `flavour`: Cheese flavour profile
 - `aroma`: Cheese aroma description
 - `isVegetarian`: Indicates if the cheese is vegetarian (0/1)
 - `price_per_kg`: Price per kilogram
@@ -152,20 +146,20 @@ This project is Dockerized, so you can easily build and run the application usin
 
 1. Ensure Docker and Docker Compose are installed on your machine.
 2. Build the containers using:
-   ```bash
-   docker-compose build
-   ```
+ ```bash
+   docker-compose build
+ ```
 3. Run the containers:
-   ```bash
-   docker-compose up
-   ```
+ ```bash
+   docker-compose up
+ ```
 
-   This will set up both the frontend and backend services.
+ This will set up both the frontend and backend services.
 
 4. The application will be available at:
-   - **Frontend**: `http://localhost:3000`
-   - **Backend**: `http://localhost:5000`
-   - **Swagger API Docs**: `http://localhost:5000/api-docs`
+   - **Frontend**: `http://localhost:3000`
+   - **Backend**: `http://localhost:5000`
+   - **Swagger API Docs**: `http://localhost:5000/api-docs`
 
 ### Stop and Remove Containers
 To stop the containers, press `Ctrl + C` in the terminal where the containers are running.
