@@ -71,7 +71,8 @@ The `docker-compose.yml` file is used to set up multi-stage Docker builds for bo
  ```
 
 4. Alternatively, to run manually:
-   #### Backend:
+   
+#### Backend:
    - Navigate to the backend directory:
  ```bash
      cd pz-cheeseria-backend
@@ -98,45 +99,6 @@ The `docker-compose.yml` file is used to set up multi-stage Docker builds for bo
  ```bash
      npm start
  ```
-
-## Docker Setup
-
-### Build and Run Containers
-
-This project is Dockerized, so you can easily build and run the application using Docker Compose.
-
-1. Ensure Docker and Docker Compose are installed on your machine.
-2. Build the containers using:
- ```bash
-   docker-compose build
- ```
-3. Run the containers:
- ```bash
-   docker-compose up
- ```
-
- This will set up both the frontend and backend services.
-
-4. The application will be available at:
-   - **Frontend**: `http://localhost:3000`
-   - **Backend**: `http://localhost:5000`
-   - **Swagger API Docs**: `http://localhost:5000/api-docs`
-
-### Stop and Remove Containers
-To stop the containers, press `Ctrl + C` in the terminal where the containers are running.
-
-To stop and remove the containers (without removing volumes or networks):
-```bash
-docker-compose down
-```
-
-### Rebuilding Containers
-If you make changes to the Dockerfiles or the source code and want to rebuild the containers, you can use:
-```bash
-docker-compose up --build
-```
-
-This will rebuild the images and restart the containers.
 
 ## Database Schema
 
